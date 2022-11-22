@@ -24,12 +24,12 @@ export default ({ member, handleClose, handleChange }) => {
                 gap: "1rem",
                 marginTop: "1rem",
                 justifyContent: "space-between"
-              }}>
+              }}>        
                 <a className="outline" href="#" role="button"
-                  onClick={() => { handleChange(Number(member.id) - 1) }}
+                  onClick={() => { (Number(member.id)) > 0 ? handleChange(Number(member.id) - 1) : handleChange(Number(member.id) + 15) }}
                 ><span className="material-symbols-outlined">arrow_back</span></a>
                 <a className="outline" href="#" role="button"
-                  onClick={() => { handleChange(Number(member.id) + 1) }}
+                  onClick={() => { (Number(member.id)) < 15 ? handleChange(Number(member.id) + 1) : handleChange(Number(member.id) - 15) }}
                 ><span className="material-symbols-outlined">arrow_forward</span></a>
               </hgroup>
             </hgroup>
